@@ -17,3 +17,8 @@
     background-image: url('/img/btn_correct.png');
     color: var(--medium-green)
 }
+
+.letter-btn:disabled {
+    cursor:auto;
+    transform: none;
+}
