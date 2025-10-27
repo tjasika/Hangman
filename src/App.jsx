@@ -15,12 +15,26 @@ function App() {
     <>
       <div className='main-container'>
 
-        <div className='btns-container'>
-          {alphabet.map((letter, index) => (
-            <Letter key={index} value={letter}></Letter>
-          ))}
+        <div className='left-container'>
+
         </div>
+
+        <div className='right-container'>
+          <h1>HANGMAN</h1>
+
+          <div className='word-container'>
+            
+          </div>
+
+          <div className='btns-container'>
+            {alphabet.map((letter, index) => (
+              <Letter key={index} value={letter}></Letter>
+            ))}
+          </div>
+        </div>
+
         
+
       </div>
       
       
