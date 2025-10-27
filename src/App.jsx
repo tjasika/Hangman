@@ -44,7 +44,11 @@ function App() {
           </div>
           
           <div className='word-container'>
-            
+              {currentWord.split('').map((letter, index) => (
+                <div key={index} className='letter-box'>
+                  {guessedLetters.includes(letter.toUpperCase()) ? letter : ''}
+                </div>
+              ))}
           </div>
 
           <div className='btns-container'>
