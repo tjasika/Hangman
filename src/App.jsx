@@ -28,6 +28,13 @@ function App() {
     getRandomWord(words);
   }, []);
 
+  const handleLetterClick = (letter) => {
+    setGuessedLetters([...guessedLetters, letter]);
+    if(!currentWord.toUpperCase().includes(letter)) {
+      setGuessesRemaining(guessesRemaining - 1);
+    }
+  }
+
 
   
   return (
@@ -39,7 +46,7 @@ function App() {
 
         <div className='right-container'>
           <div className='header-div'>
-            <span>Guesses remaining: </span>
+            <span>Guesses remaining: {guessesRemaining} </span>
             <h1>HANGMAN</h1>
           </div>
           
@@ -53,7 +60,7 @@ function App() {
 
           <div className='btns-container'>
             {alphabet.map((letter, index) => (
-              <Letter key={index} value={letter}></Letter>
+              <Letter key={index} value={letter} onClick={handleLetterClick}></Letter>
             ))}
           </div>
         </div>

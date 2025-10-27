@@ -77,4 +77,5 @@ html, body, #root {
   font-size: 32px;
   font-weight: bold;
   color: var(--highlight);
+  text-transform: uppercase;
 }
