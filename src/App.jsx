@@ -16,6 +16,9 @@ function App() {
 
   const[currentWord, setCurrentWord] = useState("");
   const [guessedLetters, setGuessedLetters] = useState([]);
+  const [incorrectLetters, setInorrectLetters] = useState([]);
+    const [correctLetters, setCorrectLetters] = useState([]);
+
   const [guessesRemaining, setGuessesRemaining] = useState(5);
 
   //Selects a random word
@@ -32,9 +35,11 @@ function App() {
     setGuessedLetters([...guessedLetters, letter]);
     if(!currentWord.toUpperCase().includes(letter)) {
       setGuessesRemaining(guessesRemaining - 1);
+      setInorrectLetters([...incorrectLetters, letter]);
+    } else {
+      setCorrectLetters([...correctLetters, letter]);
     }
   }
-
 
   
   return (
@@ -60,7 +65,11 @@ function App() {
 
           <div className='btns-container'>
             {alphabet.map((letter, index) => (
-              <Letter key={index} value={letter} onClick={handleLetterClick}></Letter>
+              <Letter key={index} value={letter} 
+                      onClick={handleLetterClick} 
+                      isCorrect={correctLetters.includes(letter)} 
+                      isIncorrect={incorrectLetters.includes(letter)}
+                      isDisabled={guessedLetters.includes(letter)}></Letter>
             ))}
           </div>
         </div>
