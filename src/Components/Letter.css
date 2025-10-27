@@ -1,0 +1,17 @@
+.letter-btn {
+  width: 70px;
+  height: 70px;
+  font-size: 25px;
+  color: var(--highlight);
+  background: transparent;
+  border: none;
+  background-image: url('/img/btn_main.png');
+  background-size: 70px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.letter-btn:hover {
+    transform: translateY(-2px);
+    cursor: pointer;
+}

@@ -1,20 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Aboreto&family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=Pixelify+Sans:wght@400..700&family=TikTok+Sans:opsz,wght@12..36,300..900&display=swap');
+
+:root {
+  --main-bg: #18362B;
+  --medium-green: #3B8155;
+  --highlight: #B8E530;
+}
+
+* {
+  font-family: "Pixelify Sans";
+  background-color: var(--main-bg);
+}
+
 #root {
   max-width: 1280px;
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
 }
-
-button {
-  width: 70px;
-  height: 70px;
-  background: none;
-  border: none;
-}
-
-.btn-bg {
-  background-image: url('/img/btn_main.png');
-  background-size: 70px;
-  background-repeat: no-repeat;
-  background-position: center;
-} 
