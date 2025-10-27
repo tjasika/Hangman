@@ -18,6 +18,17 @@ function App() {
   const [guessedLetters, setGuessedLetters] = useState([]);
   const [guessesRemaining, setGuessesRemaining] = useState(5);
 
+  //Selects a random word
+  const getRandomWord = (array) => {
+    const randomWord = array[Math.floor(Math.random() * array.length)];
+    setCurrentWord(randomWord);
+  };
+
+  useEffect(() => {
+    getRandomWord(words);
+  }, []);
+
+
   
   return (
     <>
