@@ -17,7 +17,7 @@ function GamePage() {
   const[currentWord, setCurrentWord] = useState("");
   const [guessedLetters, setGuessedLetters] = useState([]);
   const [incorrectLetters, setInorrectLetters] = useState([]);
-    const [correctLetters, setCorrectLetters] = useState([]);
+  const [correctLetters, setCorrectLetters] = useState([]);
 
   const [guessesRemaining, setGuessesRemaining] = useState(5);
 
