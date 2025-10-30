@@ -2,6 +2,7 @@ import '../App.css'
 import words from '../Data/words.json';
 import { Letter } from '../Components/Letter';
 import { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 function GamePage() {
 
@@ -12,6 +13,7 @@ function GamePage() {
     "V", "W", "X", "Y", "Z"
   ];
 
+  const navigate = useNavigate();
   //const images = [array of images]
 
   const[currentWord, setCurrentWord] = useState("");
@@ -49,6 +51,16 @@ function GamePage() {
       setCorrectLetters([...correctLetters, letter]);
     }
   }
+
+  /*useEffect(() => {
+    // Check for loss
+    if (guessesRemaining === 0) {
+      navigate('/gameover');
+    }
+
+    if(guessedLetters)
+    
+  }, [guessesRemaining, guessedLetters, currentWord]);*/
 
   
   return (
