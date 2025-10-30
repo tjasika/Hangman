@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Aboreto&family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=Pixelify+Sans:wght@400..700&family=TikTok+Sans:opsz,wght@12..36,300..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Aboreto&family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=Pixelify+Sans:wght@400..700&family=TikTok+Sans:opsz,wght@12..36,300..900&family=VT323&display=swap');
 
 :root {
   --main-bg: #18362B;
@@ -46,6 +47,7 @@ html, body, #root {
 .header-div {
   width: 100%;
   height: 100%;
+  padding: 0;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -54,6 +56,11 @@ html, body, #root {
 
 .header-div h1 {
   margin: 0;
+}
+
+.guesses-span {
+  font-size: 30px;
+  font-family: "VT323";
 }
 
 .word-container {

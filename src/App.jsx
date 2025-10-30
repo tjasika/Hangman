@@ -51,7 +51,7 @@ function App() {
 
         <div className='right-container'>
           <div className='header-div'>
-            <span>Guesses remaining: {guessesRemaining} </span>
+            <span>Guesses remaining: <span className='guesses-span'>  {guessesRemaining}</span> </span>
             <h1>HANGMAN</h1>
           </div>
           
