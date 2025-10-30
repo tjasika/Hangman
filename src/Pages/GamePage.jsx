@@ -21,15 +21,24 @@ function GamePage() {
 
   const [guessesRemaining, setGuessesRemaining] = useState(5);
 
+  const startGame = () => {
+    setGuessedLetters([]);
+    setGuessesRemaining(5);
+    setCorrectLetters([]);
+    setInorrectLetters([]);
+    getRandomWord(words);
+  }
+
+  useEffect(()=> {
+    startGame();
+  }, [])
+
   //Selects a random word
   const getRandomWord = (array) => {
     const randomWord = array[Math.floor(Math.random() * array.length)];
     setCurrentWord(randomWord);
   };
 
-  useEffect(() => {
-    getRandomWord(words);
-  }, []);
 
   const handleLetterClick = (letter) => {
     setGuessedLetters([...guessedLetters, letter]);
