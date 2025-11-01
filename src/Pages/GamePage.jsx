@@ -16,12 +16,12 @@ function GamePage() {
 
   const navigate = useNavigate();
   const images = [
-    'url(/img/hangman6.png)',
-    'url(/img/hangman5.png)',
-    'url(/img/hangman4.png)',
-    'url(/img/hangman3.png)',
-    'url(/img/hangman2.png)',
-    'url(/img/hangman1.png)', 
+    'url(./img/hangman6.png)',
+    'url(./img/hangman5.png)',
+    'url(./img/hangman4.png)',
+    'url(./img/hangman3.png)',
+    'url(./img/hangman2.png)',
+    'url(./img/hangman1.png)', 
   ]
 
   const[currentWord, setCurrentWord] = useState("");

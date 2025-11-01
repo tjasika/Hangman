@@ -2,13 +2,13 @@ import './Letter.css'
 
 export const Letter = ({value, onClick, isCorrect, isIncorrect, isDisabled}) => {
 
-    let bgImage = 'url(/img/btn_main.png)';
+    let bgImage = 'url(./img/btn_main.png)';
     let textColor = 'var(--highlight)';
     if(isCorrect) {
-        bgImage = 'url(/img/btn_correct.png)';
+        bgImage = 'url(./img/btn_correct.png)';
         textColor = 'var(--medium-green)';
     } else if(isIncorrect) {
-        bgImage = 'url(/img/btn_incorrect.png)';
+        bgImage = 'url(./img/btn_incorrect.png)';
         textColor = 'var(--main-bg)';
     }
 
