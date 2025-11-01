@@ -16,6 +16,7 @@ function GamePage() {
 
   const navigate = useNavigate();
   const images = [
+    'url(/img/hangman6.png)',
     'url(/img/hangman5.png)',
     'url(/img/hangman4.png)',
     'url(/img/hangman3.png)',
@@ -27,9 +28,10 @@ function GamePage() {
   const [guessedLetters, setGuessedLetters] = useState([]);
   const [incorrectLetters, setInorrectLetters] = useState([]);
   const [correctLetters, setCorrectLetters] = useState([]);
+  const [gameOver, setGameOver] = useState(false);
 
   const [guessesRemaining, setGuessesRemaining] = useState(5);
-  const [image, setImage] = useState(images[guessesRemaining])
+  const [image, setImage] = useState(images[0])
 
   const startGame = () => {
     setGuessedLetters([]);
@@ -37,6 +39,7 @@ function GamePage() {
     setCorrectLetters([]);
     setInorrectLetters([]);
     getRandomWord(words);
+    setGameOver(false);
   }
 
   useEffect(()=> {
@@ -61,18 +64,33 @@ function GamePage() {
   }
 
   useEffect(() => {
-  if (guessesRemaining > 0) {
+  if (guessesRemaining >= 0) {
     setImage(images[guessesRemaining]);
   }
 }, [guessesRemaining]);
 
   useEffect(() => {
+    if (gameOver) return;
     // Check for loss
     if (guessesRemaining === 0) {
-      navigate('/gameover');
+      setGuessedLetters(currentWord.toUpperCase().split(''));
+      setGameOver(true);
+      setTimeout(()=> {
+        navigate('/gameover', { state: { title: 'GAME OVER!' } });
+      }, 3000)
+      
     }
 
-    //if(guessedLetters)
+    if (currentWord) {
+      const allLettersGuessed = currentWord
+        .toUpperCase()
+        .split('')
+        .every(letter => guessedLetters.includes(letter));
+      
+      if (allLettersGuessed && guessedLetters.length > 0) {
+        navigate('/gameover', { state: { title: 'YOU WIN!' } });      
+      }
+    }
     
   }, [guessesRemaining, guessedLetters, currentWord]);
 
