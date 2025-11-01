@@ -18,7 +18,7 @@
   color: var(--highlight);
   background: transparent;
   border: none;
-  background-image: url('/img/start-btn.png');
+  background-image: url('./img/start-btn.png');
   background-size: 300px;
   background-repeat: no-repeat;
   background-position: center;
@@ -26,7 +26,7 @@
 
 .start-btn:hover {
   cursor: pointer;
-  background-image: url('/img/start-btn-hover.png');
+  background-image: url('./img/start-btn-hover.png');
   color: var(--medium-green);
 }
 
