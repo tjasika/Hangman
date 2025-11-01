@@ -1,6 +1,7 @@
 import '../App.css'
 import words from '../Data/words.json';
 import { Letter } from '../Components/Letter';
+import {ImageContainer} from '../Components/ImageContainer';
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 
@@ -14,7 +15,13 @@ function GamePage() {
   ];
 
   const navigate = useNavigate();
-  //const images = [array of images]
+  const images = [
+    'url(/img/hangman5.png)',
+    'url(/img/hangman4.png)',
+    'url(/img/hangman3.png)',
+    'url(/img/hangman2.png)',
+    'url(/img/hangman1.png)', 
+  ]
 
   const[currentWord, setCurrentWord] = useState("");
   const [guessedLetters, setGuessedLetters] = useState([]);
@@ -22,6 +29,7 @@ function GamePage() {
   const [correctLetters, setCorrectLetters] = useState([]);
 
   const [guessesRemaining, setGuessesRemaining] = useState(5);
+  const [image, setImage] = useState(images[guessesRemaining])
 
   const startGame = () => {
     setGuessedLetters([]);
@@ -52,23 +60,28 @@ function GamePage() {
     }
   }
 
-  /*useEffect(() => {
+  useEffect(() => {
+  if (guessesRemaining > 0) {
+    setImage(images[guessesRemaining]);
+  }
+}, [guessesRemaining]);
+
+  useEffect(() => {
     // Check for loss
     if (guessesRemaining === 0) {
       navigate('/gameover');
     }
 
-    if(guessedLetters)
+    //if(guessedLetters)
     
-  }, [guessesRemaining, guessedLetters, currentWord]);*/
+  }, [guessesRemaining, guessedLetters, currentWord]);
 
   
   return (
     <>
       <div className='main-container'>
 
-        <div className='left-container'>
-        </div>
+        <ImageContainer imgUrl={image}/>
 
         <div className='right-container'>
           <div className='header-div'>

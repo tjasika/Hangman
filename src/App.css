@@ -32,7 +32,7 @@ html, body, #root {
   width: 100%;
   /*background-color: var(--medium-green);*/
   background-image: url('/img/hangman1.png');
-  background-size: 700px;
+  background-size: 500px;
   background-repeat: no-repeat;
   background-position: center;
 }
