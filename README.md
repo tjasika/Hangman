@@ -1,6 +1,7 @@
 # Hangman 🪢
 
-A classic **Hangman** game in React.js - with my own illustrations!
+A classic **Hangman** game in React.js - with my own illustrations! 
+You can check it out yourself - it's deployed!
 
 ### Components and pages
 I separated the project into three pages: 
