@@ -32,3 +32,5 @@ The displayed *hangman* illustration is handled in an *useEffect* hook - dependi
 The second *useEffect* handles game end: if *guessesRemaining* are 0, the word is revealed to the player and 3 seconds later, they're redirected to the end page, with the message "GAME OVER". The second part checks for win and the user is redirected to the same page, but with a different message, "YOU WIN". (I vibe-coded that part of the logic)
 
 ### Styling
+Obviously I had to choose a theme for this project, which was simply just 'computers' - so all the words are connected to computers, computer science.... I decided to draw the illustrations and keys in *pixel art* style (i used https://www.pixilart.com/). For the color palette I went with the first one I found on Pinterest that I liked. Although it could be better I'm honestly happy with how it turned out.  
+I used plain CSS this time. For the responsiveness I just used Claude.ai (I was too lazy).
