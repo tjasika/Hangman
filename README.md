@@ -25,9 +25,10 @@ The main logic is in the **GamePage.jsx** page. There are 7 state variables:
 - **image**: which hangman image to display
 
 #### Guessing 
-This is the main logic of the game - if the player clicks on a letter that is inside the hidden word, they're one step closer to winning. If the letter is not in the word, the guesses remaining decrement and the player is one step closer to being "hanged".
-So firstly, the **selectRandomWord(array)** function selects a word from our .json file and sets it as the *currentWord*.
-When the player clicks on a letter, the **handleLetterClick(letter)** function adds that letter to the *guessedLetters* array and checks for correct guess - if incorrect, the *guessesRemaining* decrements by 1. Once the letter is inside the *guessedLetters* array, that button becomes disabled, to prevent errors.
-
+This is the main logic of the game - if the player clicks on a letter that is inside the hidden word, they're one step closer to winning. If the letter is not in the word, the guesses remaining decrement and the player is one step closer to being "hanged".  
+So firstly, the **selectRandomWord(array)** function selects a word from our .json file and sets it as the *currentWord*.  
+When the player clicks on a letter, the **handleLetterClick(letter)** function adds that letter to the *guessedLetters* array and checks for correct guess - if incorrect, the *guessesRemaining* decrements by 1. Once the letter is inside the *guessedLetters* array, that button becomes disabled, to prevent errors.  
+The displayed *hangman* illustration is handled in an *useEffect* hook - depending on the *guessesRemaining*, the image is selected from the *images* array. Since the guesses are decrementing, I just put the image urls in reversed order, so we're moving from the end of the array to the front.  
+The second *useEffect* handles game end: if *guessesRemaining* are 0, the word is revealed to the player and 3 seconds later, they're redirected to the end page, with the message "GAME OVER". The second part checks for win and the user is redirected to the same page, but with a different message, "YOU WIN". (I vibe-coded that part of the logic)
 
 ### Styling
