@@ -63,6 +63,21 @@ function GamePage() {
     }
   }
 
+  useEffect(()=> {
+    const handleKeyPress = (event) => {
+      const key = event.key.toUpperCase();
+      if(alphabet.includes(key)) {
+        if(!guessedLetters.includes(key)) {
+          handleLetterClick(key);
+        }
+      }
+    }
+    window.addEventListener('keydown', handleKeyPress);
+    return () => {
+      window.removeEventListener('keydown', handleKeyPress);
+    };
+  }, [guessedLetters, currentWord])
+
   useEffect(() => {
   if (guessesRemaining >= 0) {
     setImage(images[guessesRemaining]);
